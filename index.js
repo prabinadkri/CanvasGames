@@ -2,7 +2,6 @@ const canvas=document.querySelector('canvas')
 const c=canvas.getContext('2d')
 canvas.width=window.innerWidth
 canvas.height=window.innerHeight
-//console.log(canvas.height)
 const gravity=1.5
 class Player{
     constructor(){
@@ -21,8 +20,6 @@ class Player{
         this.height=90
     }
     draw(){
-      /*  c.fillStyle='red'
-        c.fillRect(this.position.x,this.position.y,this.width,this.height)*/
         c.drawImage(this.image,this.position.x,this.position.y,this.width,this.height)
     }
     update(){
@@ -51,8 +48,6 @@ class Platform{
     this.height=25;
   }
     draw(){
-    /*  c.fillStyle='blue';
-      c.fillRect(this.position.x,this.position.y,this.width,this.height);*/
       c.drawImage(this.img,this.position.x,this.position.y)
     }
 
@@ -85,8 +80,6 @@ class Dec{
     this.height=25;
   }
     draw(){
-    /*  c.fillStyle='blue';
-      c.fillRect(this.position.x,this.position.y,this.width,this.height);*/
       c.drawImage(this.img,this.position.x,this.position.y)
     }
 
@@ -102,8 +95,6 @@ class Decg{
 
   }
     draw(){
-    /*  c.fillStyle='blue';
-      c.fillRect(this.position.x,this.position.y,this.width,this.height);*/
       c.drawImage(this.img,this.position.x,this.position.y,35,35)
     }
   }
@@ -118,8 +109,6 @@ class Goal{
     this.height=50;
   }
     draw(){
-    /*  c.fillStyle='blue';
-      c.fillRect(this.position.x,this.position.y,this.width,this.height);*/
       c.drawImage(this.img,this.position.x,this.position.y,this.width,this.height)
     }
   }
@@ -135,9 +124,7 @@ let imgg=new Image();
 imgg.src='goal.png';
 let imgw= new Image()
 imgw.src='win.png'
-//console.log(image.width,image.height);
-//image.height=100px;
-//image.width=50px;
+
 
 let player= new Player();
 let decs= [new Dec({x:0,y:180,img:imge}),new Dec({x:1500,y:180,img:imge})]
@@ -166,10 +153,7 @@ imgg=new Image();
 imgg.src='goal.png';
 imgw= new Image()
 imgw.src='win.png'
-//console.log(image.width,image.height);
-//image.height=100px;
-//image.width=50px;
-//console.log(image);
+
  player= new Player();
  decs= [new Dec({x:0,y:180,img:imge}),new Dec({x:1500,y:180,img:imge})]
  platforms=[new Platform({x:0,y:550,img}),new Platform({x:852+500,y:550,img}),new Platform({x:2000+500,y:550,img}),new Platform({x:3200+500,y:550,img}),new Platform({x:4552,y:550,img}),new Platform({x:6700,y:550,img}),new Platform({x:6700+852,y:550,img})]
@@ -302,13 +286,11 @@ if(player.position.y>canvas.height){
 
 animate()
 window.addEventListener('keydown',({keyCode})=>{
-    //console.log(keyCode)
+    
     switch(keyCode){
         case 38:
             console.log('up');
-          /* if(player.position.y+player.height+player.velocity.y<=500)
-                player.velocity.y=0}
-            else*/if(scrollup<1){
+          if(scrollup<1){
             scrollup+=1
             player.velocity.y -=25;}
     break;
@@ -328,7 +310,7 @@ window.addEventListener('keydown',({keyCode})=>{
 })
 
 window.addEventListener('keyup',({keyCode})=>{
-    //console.log(keyCode)
+    
     switch(keyCode){
         case 38:
             console.log('up');
